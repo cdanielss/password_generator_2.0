@@ -98,7 +98,7 @@ class PassGen:
         cursor.execute("""
         SELECT site, usuario, senha FROM users;
         """)
-        with open('senhas.txt','a',newline='') as arquivo:
+        with open('senhas.txt','w+',newline='') as arquivo:
             for linha in cursor.fetchall():
                 arquivo.write(f"SITE:, {linha[0]}, USUARIO:, {linha[1]}, SENHA:, {linha[2]}\n")
         print('Arquivo Salvo')
