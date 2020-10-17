@@ -7,7 +7,7 @@
     <br>
 </h3>
 
-O projeto foi feito com a biblioteca PySimpleGUI, utiliza um banco ```sqlite``` para salvar os dados. 
+Este projeto é a evolução do [password_generator](https://github.com/cdanielss/password_generator). Foi criado utilizando com a biblioteca PySimpleGUI, utiliza um banco de dados ```sqlite``` para salvar os dados.  
 
 Os recursos disponíveis são: 
 - [x] Adicionar o site e o usuário que você vai gerar a senha.
