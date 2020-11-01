@@ -23,7 +23,8 @@ class PassGen:
         self.janela = sg.Window('Password Generator', layout, grab_anywhere=True, size=(650,450))
 
     def Iniciar(self):
-        conn = sqlite3.connect('senhas.db')
+        caminho = os.getcwd() + '/senhas.db'
+        conn = sqlite3.connect(caminho)
         cursor = conn.cursor()
         cursor.execute("""
         CREATE TABLE IF NOT EXISTS users (
@@ -82,7 +83,9 @@ class PassGen:
         conn.close()
 
     def ver(self):
-        conn = sqlite3.connect('senhas.db')
+        caminho = os.getcwd() + '/senhas.db'
+        conn = sqlite3.connect(caminho)
+        conn = sqlite3.connect(caminho)
         cursor = conn.cursor()
         cursor.execute("""
         SELECT site, usuario, senha FROM users;
@@ -93,7 +96,8 @@ class PassGen:
         conn.close()
     
     def exportar(self):
-        conn = sqlite3.connect('senhas.db')
+        caminho = os.getcwd() + '/senhas.db'
+        conn = sqlite3.connect(caminho)
         cursor = conn.cursor()
         cursor.execute("""
         SELECT site, usuario, senha FROM users;
