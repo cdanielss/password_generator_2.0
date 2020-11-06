@@ -85,7 +85,6 @@ class PassGen:
     def ver(self):
         caminho = os.getcwd() + '/senhas.db'
         conn = sqlite3.connect(caminho)
-        conn = sqlite3.connect(caminho)
         cursor = conn.cursor()
         cursor.execute("""
         SELECT site, usuario, senha FROM users;
