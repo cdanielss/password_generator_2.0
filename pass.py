@@ -27,12 +27,12 @@ class PassGen:
         conn = sqlite3.connect(caminho)
         cursor = conn.cursor()
         cursor.execute("""
-        CREATE TABLE IF NOT EXISTS users (
-        id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-        site TEXT NOT NULL, 
-        usuario TEXT NOT NULL, 
-        senha TEXT NOT NULL
-        );
+            CREATE TABLE IF NOT EXISTS users (
+                id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                site TEXT NOT NULL, 
+                usuario TEXT NOT NULL, 
+                senha TEXT NOT NULL
+            );
         """)
         conn.close()
         while True:
@@ -75,8 +75,8 @@ class PassGen:
         conn = sqlite3.connect('senhas.db')
         cursor = conn.cursor()
         cursor.execute("""
-        INSERT INTO users (site, usuario, senha)
-        VALUES (?,?,?)
+            INSERT INTO users (site, usuario, senha)
+            VALUES (?,?,?)
         """, (site, usuario, senha))
         print('Informacoes Salvas')
         conn.commit()
@@ -87,7 +87,7 @@ class PassGen:
         conn = sqlite3.connect(caminho)
         cursor = conn.cursor()
         cursor.execute("""
-        SELECT site, usuario, senha FROM users;
+            SELECT site, usuario, senha FROM users;
         """)
         for linha in cursor.fetchall():
             print('SITE:', linha[0], '  USUARIO:', linha[1], '  SENHA:', linha[2])
@@ -99,7 +99,7 @@ class PassGen:
         conn = sqlite3.connect(caminho)
         cursor = conn.cursor()
         cursor.execute("""
-        SELECT site, usuario, senha FROM users;
+            SELECT site, usuario, senha FROM users;
         """)
         with open('senhas.txt','w+',newline='') as arquivo:
             for linha in cursor.fetchall():
